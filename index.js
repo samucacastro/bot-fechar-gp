@@ -7,63 +7,63 @@ import configSocket from './bailyes/config-socket.js';
 import express from 'express';
 const app = express();
 let qrCode = ' ';
-app.get("/qr", (req, res) => {
-    return res.send(`
-<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    <section class="conteiner">
-        <div id="qrcode-2"></div>
-        <div id="conectado"></div>
-    </section>
-<script>
-    let qrcodeContainer2 = document.getElementById("qrcode-2");
-    const conectado = document.getElementById("conectado");
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
+// app.get("/qr", (req, res) => {
+//     return res.send(`
+// <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+//     <section class="conteiner">
+//         <div id="qrcode-2"></div>
+//         <div id="conectado"></div>
+//     </section>
+// <script>
+//     let qrcodeContainer2 = document.getElementById("qrcode-2");
+//     const conectado = document.getElementById("conectado");
+//     const windowWidth = window.innerWidth;
+//     const windowHeight = window.innerHeight;
 
-    const qrCodeSize = windowWidth < windowHeight ? windowWidth : windowHeight;
-    const estaLogado = '${qrCode}' === 'undefined' ? '<img class="conectado" src="https://cdn-icons-png.flaticon.com/512/190/190411.png"/>' : "";
-    qrcodeContainer2.innerHTML = "";
-    qrcodeContainer2.innerHTML += estaLogado;
-    let website = '${qrCode}' === 'undefined' ? '' : '${qrCode}'; 
-    new QRCode(qrcodeContainer2, {
-        text: website,
-        width: (qrCodeSize - 40),
-        height: (qrCodeSize - 40),
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.L
-    });
-</script>
-<style type="text/css">
-    *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-    .conteiner{
-        width: 100%;
-        height: 100%;
-        background-color: seagreen;
-    }
+//     const qrCodeSize = windowWidth < windowHeight ? windowWidth : windowHeight;
+//     const estaLogado = '${qrCode}' === 'undefined' ? '<img class="conectado" src="https://cdn-icons-png.flaticon.com/512/190/190411.png"/>' : "";
+//     qrcodeContainer2.innerHTML = "";
+//     qrcodeContainer2.innerHTML += estaLogado;
+//     let website = '${qrCode}' === 'undefined' ? '' : '${qrCode}'; 
+//     new QRCode(qrcodeContainer2, {
+//         text: website,
+//         width: (qrCodeSize - 40),
+//         height: (qrCodeSize - 40),
+//         colorDark: "#000000",
+//         colorLight: "#ffffff",
+//         correctLevel: QRCode.CorrectLevel.L
+//     });
+// </script>
+// <style type="text/css">
+//     *{
+//         padding: 0;
+//         margin: 0;
+//         box-sizing: border-box;
+//     }
+//     .conteiner{
+//         width: 100%;
+//         height: 100%;
+//         background-color: seagreen;
+//     }
 
-    #qrcode-2{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100% !important;
-        height: 100%;
-    }
+//     #qrcode-2{
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         width: 100% !important;
+//         height: 100%;
+//     }
 
-    .conectado{
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 100;
-    }
+//     .conectado{
+//         position: absolute;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         z-index: 100;
+//     }
 
-</style>`)
-})
+// </style>`)
+// })
 async function connectionLogic() {
     const { state, saveCreds } = await useMultiFileAuthState("sessao");
     const { version } = await fetchLatestBaileysVersion()
@@ -98,8 +98,8 @@ async function connectionLogic() {
     sock.ev.on("creds.update", saveCreds);
 }
 
-const port = process.env.PORT || 3000;
-app.listen(port, () =>
-    console.log("Conexão ativa na porta: " + port));
+// const port = process.env.PORT || 3000;
+// app.listen(port, () =>
+//     console.log("Conexão ativa na porta: " + port));
 
 connectionLogic();
