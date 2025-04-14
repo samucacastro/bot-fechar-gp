@@ -1,7 +1,7 @@
 //REQUERINDO MODULOS
 import { makeWASocket, useMultiFileAuthState, fetchLatestBaileysVersion, DisconnectReason } from '@whiskeysockets/baileys';
 import fs from "fs";
-import { automacaoGrupos } from './automacao-grupo.js'
+// import { automacaoGrupos } from './automacao-grupo.js'
 import qrcode from 'qrcode';
 import configSocket from './bailyes/config-socket.js';
 import express from 'express';
