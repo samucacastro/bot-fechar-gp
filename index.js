@@ -5,7 +5,7 @@ import { automacaoGrupos } from './automacao-grupo.js'
 import qrcode from 'qrcode';
 import configSocket from './bailyes/config-socket.js';
 import express from 'express';
-const app = express();
+// const app = express();
 let qrCode = ' ';
 // app.get("/qr", (req, res) => {
 //     return res.send(`
@@ -103,3 +103,4 @@ async function connectionLogic() {
 //     console.log("Conexão ativa na porta: " + port));
 
 connectionLogic();
+console.log("GGGGGGGG")
