@@ -1,5 +1,4 @@
 // import { delayAleatorio } from '../lib/util.js'
-/*
 import { setGroupToAdminsOnly, delayAleatorio, sendText } from './funcoes.js'
 import schedule from 'node-schedule'
 import moment from "moment-timezone"
@@ -15,7 +14,7 @@ export const automacaoGrupos = async (c, idGrupo) => {
     // console.log(new Date())
     const job22h = schedule.scheduleJob({
         timezone: "America/Sao_Paulo",
-        rule: '00 23 * * *'
+        rule: '00 20 * * *'
     }, async () => {
         // Sua tarefa aqui
         try {
@@ -57,6 +56,3 @@ export const automacaoGrupos = async (c, idGrupo) => {
         }
     });
 }
-
-
-*/
