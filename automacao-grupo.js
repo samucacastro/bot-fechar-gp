@@ -1,4 +1,5 @@
 // import { delayAleatorio } from '../lib/util.js'
+/*
 import { setGroupToAdminsOnly, delayAleatorio, sendText } from './funcoes.js'
 import schedule from 'node-schedule'
 import moment from "moment-timezone"
@@ -56,3 +57,6 @@ export const automacaoGrupos = async (c, idGrupo) => {
         }
     });
 }
+
+
+*/
