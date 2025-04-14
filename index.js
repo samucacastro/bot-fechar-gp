@@ -92,7 +92,7 @@ async function connectionLogic() {
         // console.log(m)
     });
 
-    await automacaoGrupos(sock, ['120363169144052088@g.us', '5511963296699-1618489968@g.us']);
+    // await automacaoGrupos(sock, ['120363169144052088@g.us', '5511963296699-1618489968@g.us']);
     // await automacaoGrupos(sock, ['120363230240489611@g.us', '120363029210654926@g.us']);
     // ['120363169144052088@g.us', '5511963296699-1618489968@g.us']
     sock.ev.on("creds.update", saveCreds);
