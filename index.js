@@ -71,7 +71,7 @@ async function connectionLogic() {
     sock.ev.on("connection.update", async (update) => {
         const { connection, lastDisconnect, qr } = update || {};
         qrCode = qr;
-        console.log(qr)
+        // console.log(qr)
         if (connection === "close") {
             const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
             if (shouldReconnect) {
